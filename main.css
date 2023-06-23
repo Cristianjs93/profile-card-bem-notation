@@ -1,0 +1,122 @@
+body {
+  min-height: 100vh;
+  font-family: cursive;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+.container {
+  width: 30%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 5px solid purple;
+}
+
+.container__image {
+  border-radius: 50%;
+  border: 3px solid purple;
+  width: 10vw;
+  height: 10vw;
+  object-fit: cover;
+  padding: 1px;
+}
+
+.container__image--expand:hover {
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+  padding: 1px;
+  border-radius: 50%;
+  border: 3px solid purple;
+  box-shadow: 5px 21px 102px -35px rgba(128, 0, 128, 0.395);
+  transition: 0.5s;
+}
+
+.container__name {
+  font-size: 3.5vh;
+  color: purple;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.rating__star {
+  font-size: 40px;
+  color: gold;
+}
+
+.rating__star--rated::before {
+  content: "\2606"; /* Se cambia el contenido por el carácter de estrella rellena (\2606) en lugar de estrella vacia */
+  position: absolute;
+  color: orange;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Con el caracter "~" se selecionan todos los pseudoelementos (.rating__star--rated::before) que van luego del primero seleccionando (la primera estrella). Al hacer hover se activarian */
+.rating__star--rated:hover::before,
+.rating__star--rated:hover ~ .rating__star--rated::before {
+  opacity: 1;
+  content: "\2605";
+}
+.text-content {
+  font-size: 20px;
+}
+
+.text-content__paragraph {
+  color: #444;
+  text-align: justify;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.buttons__read {
+  font-weight: bold;
+  font-size: 16px;
+  width: 10vw;
+  height: 7vh;
+  background-color: transparent;
+  color: purple;
+  margin: 5px;
+  margin-top: 10px;
+  border: 3px solid purple;
+  border-radius: 5px;
+}
+
+.buttons__read--hover:hover {
+  background-color: purple;
+  color: #fff;
+}
+
+.buttons__contact {
+  font-weight: bold;
+  font-size: 16px;
+  width: 10vw;
+  height: 7vh;
+  background-color: purple;
+  color: #fff;
+  margin: 5px;
+  margin-top: 10px;
+  border: 3px solid purple;
+  border-radius: 5px;
+}
+
+.buttons__contact--hover:hover {
+  background-color: #fff;
+  color: purple;
+}
